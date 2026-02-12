@@ -14,28 +14,41 @@ public class LoginPage {
 
     By errorMessage = By.xpath("//h3[@data-test='error']");
 
-    public LoginPage(WebDriver driver){
+    By landingPage = By.xpath("//div[text()='Swag Labs']");
+
+    By product = By.xpath("//a[@data-test=\"item-0-title-link\"]");
+
+
+    public LoginPage(WebDriver driver) {
         this.driver = driver;
     }
 
-    public void openURL(){
+    public void openURL() {
         driver.get("https://www.saucedemo.com/");
     }
 
-    public void enterUsername(String user){
+    public void enterUsername(String user) {
         driver.findElement(username).sendKeys(user);
     }
 
-    public void enterPassword(String pass){
+    public void enterPassword(String pass) {
         driver.findElement(password).sendKeys(pass);
     }
 
-    public void clickLogin(){
+    public void clickLogin() {
         driver.findElement(login).click();
+    }
+
+    public String landingPage() {
+        return driver.findElement(landingPage).getText();
+
+    }
+
+    public void productClick(){
+
     }
 
     public String getErrorMessage() {
         return driver.findElement(errorMessage).getText();
     }
-
 }

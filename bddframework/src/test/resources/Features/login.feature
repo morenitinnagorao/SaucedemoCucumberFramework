@@ -1,11 +1,10 @@
-Feature: Login functionality of Saucedemo
+Feature: Login functionality
 
   Scenario: Valid login
     Given User is on login page
     When User enters valid username and password
     And User clicks on login button
     Then User should navigate to products page
-
 
   Scenario: Invalid login
     Given User is on login page
